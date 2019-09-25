@@ -2,7 +2,9 @@
 
 ## Data Model
 
-![](https://user-images.githubusercontent.com/4499581/65583242-bf4adc00-df76-11e9-927c-77ea7ea82617.jpg)
+|||
+|:--|:--|
+![](https://user-images.githubusercontent.com/4499581/65583242-bf4adc00-df76-11e9-927c-77ea7ea82617.jpg)|![]()
 
 ```
 bundle install && rails server
