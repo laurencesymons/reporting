@@ -1,0 +1,31 @@
+@startuml
+    !define table(name) class name <<T,#FFAAAA>>
+
+    table(imports) {
+        id INTEGER
+        name TEXT
+        month TEXT
+        processed_raw_recruitments INTEGER
+        processed_recruitments INTEGER
+    }
+
+    table(raw_recruitments) {
+        id INTEGER
+        import_id INTEGER
+        dispcode TEXT
+        u_email TEXT
+        pstatu_date TEXT
+        penter TEXT
+        reg_code TEXT
+        m_recruit TEXT
+        m_signup TEXT
+        m_panel_membership TEXT
+        m_gender_expanded TEXT
+        m_age_bands_report TEXT
+        datetime TEXT
+    }
+
+    imports::id --{ raw_recruitments::import_id
+
+
+@enduml

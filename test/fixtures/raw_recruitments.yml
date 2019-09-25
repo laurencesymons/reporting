@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  import_id: 1
+  dispcode: MyString
+  u_email: MyString
+  pstatu_date: MyString
+  penter: MyString
+  reg_code: MyString
+  m_recruit: MyString
+  m_signup: MyString
+  m_panel_membership: MyString
+  m_gender_expanded: MyString
+  m_age_bands_report: MyString
+  datetime: MyString
+
+two:
+  import_id: 1
+  dispcode: MyString
+  u_email: MyString
+  pstatu_date: MyString
+  penter: MyString
+  reg_code: MyString
+  m_recruit: MyString
+  m_signup: MyString
+  m_panel_membership: MyString
+  m_gender_expanded: MyString
+  m_age_bands_report: MyString
+  datetime: MyString

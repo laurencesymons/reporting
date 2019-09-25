@@ -1,0 +1,36 @@
+<section class="pa4">
+    <header class="flex justify-between items-center">
+        <h1>Recruitments</h1>
+        <h1><%=link_to "Back to imports", imports_path, class: "link"%></h1>
+    </header>
+    <ul class="list pl0 w-100">
+        <li class="row-recruitment b white ma0">
+            <div>dispcode</div>
+            <div>u_email</div>
+            <div>pstatu_date</div>
+            <div>penter_date</div>
+            <div>reg_code</div>
+            <div>m_recruit</div>
+            <div>m_signup</div>
+            <div>m_panel_membership</div>
+            <div>m_gender_expanded</div>
+            <div>m_age_bands_report</div>
+            <div>datetime</div>
+        </li>
+        <%@import.raw_recruitments.each do |row|%>
+            <li class="row-recruitment ma0">
+                <div><%=row.dispcode%></div>
+                <div><%=row.u_email%></div>
+                <div><%=row.pstatu_date%></div>
+                <div><%=row.penter%></div>
+                <div><%=row.reg_code%></div>
+                <div><%=row.m_recruit%></div>
+                <div><%=row.m_signup%></div>
+                <div><%=row.m_panel_membership%></div>
+                <div><%=row.m_gender_expanded%></div>
+                <div><%=row.m_age_bands_report%></div>
+                <div><%=row.datetime%></div>
+            </li>
+        <%end%>
+    </ul>
+</section>

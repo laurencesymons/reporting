@@ -1,0 +1,21 @@
+// Place all the styles related to the rawrecruitments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.row-recruitment {
+    display: grid;
+    font-size: 10px;
+    grid-template-columns: 10% auto 10% 10% 10% 10% 10% 10% 10% 5% 5%;
+    grid-gap: 2px;
+}
+
+.row-recruitment div {
+    margin-top: 2px;
+    overflow: hidden;
+    padding: .25rem;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.list li:first-child div{
+    background-color: rgba(0,0,0,0.6);
+}

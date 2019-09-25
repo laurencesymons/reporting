@@ -1,0 +1,25 @@
+<section class="imports ph1 pv2">
+    <%["recruitments", "unsubscribes", "signups"].each do |catagory|%>
+        <section class="ba b--gray flex flex-column justify-end mh1">
+            <header class="pa2">
+                <h1 class="mv0 pv2 tc bb b--gray"><%=catagory.capitalize%></h1>
+            </header>
+            <main class="pa2 flex-auto">
+                <%@imports.filter{|i| i.catagory == catagory}.each do |import|%>
+                    <article class="flex items-center justify-between pa2 br2 bg-near-white ma1">
+                        <div><%=link_to "#{import.filename} (#{import.raw_recruitments.count} rows)", import_path(import.id)%></div>
+                        <div><%=link_to "delete", import_path(import), method: :delete%>
+                    </article>
+                <%end%>
+            </main>
+            <footer class="pa2">
+                <%=form_with model: @import, local: true, multipart: true, class: "flex flex-column" do |f| %>
+                    <%=f.text_field :catagory, type: :hidden, value: catagory %>
+                    <%=f.text_field :month, pattern: /dddd-dd/, placeholder: "YYYY-MM", class: "pa2"%>
+                    <%=f.file_field :file, required: true, class: "bg-gray pa2 b--transparent white"%>
+                    <%=f.submit value: "Upload to #{catagory.capitalize}", class: "w-100 pa2 b--transparent bg-near-black white"%>
+                <%end%>
+            </footer>
+        </section>
+    <%end%>
+</section>

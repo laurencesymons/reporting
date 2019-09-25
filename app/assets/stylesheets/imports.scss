@@ -1,0 +1,15 @@
+// Place all the styles related to the imports controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.imports {
+    display: grid;
+    grid-template-columns: 33.333% 33.333% 33.333%;
+    grid-template-rows: 6rem auto 3rem;
+}
+
+.imports section {
+    height: calc(100vh - 1rem);
+}
+
+ 
