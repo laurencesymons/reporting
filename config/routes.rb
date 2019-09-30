@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :imports do
     resources :rawrecruitments
+    resources :daily_figures
   end
 end

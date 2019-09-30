@@ -6,6 +6,7 @@ class CreateRawRecruitments < ActiveRecord::Migration[6.0]
       t.string :u_email
       t.string :pstatu_date
       t.string :penter
+      t.integer :day
       t.string :reg_code
       t.string :m_recruit
       t.string :m_signup

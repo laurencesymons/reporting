@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_24_185233) do
+ActiveRecord::Schema.define(version: 2019_09_27_093838) do
+
+  create_table "daily_figures", force: :cascade do |t|
+    t.integer "R01_Completers"
+    t.integer "R02_Starters"
+    t.integer "Recruited"
+    t.integer "R01_Completes_To_R02_Starters_Ratio"
+    t.integer "R02_Starters_To_Recruited_Ratio"
+    t.integer "R01_Completers_To_Recruited_Ratio"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "import_id"
+    t.integer "quarter"
+    t.string "timestamp"
+  end
 
   create_table "imports", force: :cascade do |t|
     t.string "filename"
@@ -28,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_09_24_185233) do
     t.string "u_email"
     t.string "pstatu_date"
     t.string "penter"
+    t.integer "day"
     t.string "reg_code"
     t.string "m_recruit"
     t.string "m_signup"

@@ -2,6 +2,8 @@
     <header class="flex justify-between items-center">
         <h1>Recruitments</h1>
         <h1><%=link_to "Back to imports", imports_path, class: "link"%></h1>
+
+        <h2><%=link_to "Processed Daily Figures for this month", class: "link"%></h2>
     </header>
     <ul class="list pl0 w-100">
         <li class="row-recruitment b white ma0">
@@ -9,6 +11,7 @@
             <div>u_email</div>
             <div>pstatu_date</div>
             <div>penter_date</div>
+            <div>Day</div>
             <div>reg_code</div>
             <div>m_recruit</div>
             <div>m_signup</div>
@@ -23,6 +26,7 @@
                 <div><%=row.u_email%></div>
                 <div><%=row.pstatu_date%></div>
                 <div><%=row.penter%></div>
+                <div><%=row.day%></div>
                 <div><%=row.reg_code%></div>
                 <div><%=row.m_recruit%></div>
                 <div><%=row.m_signup%></div>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2><%=@import.month%></h2>
+
+
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>R01 Completers</th>
+        <th>R02 Starters</th>
+        <th>Recruited</th>
+        <th>R01 Completers to R02 Ratio</th>
+        <th>R02 Starters to Recruited Ratio</th>
+        <th>R01 Completers to Recruited Ratio</th>
+      </tr>
+    <%@import.daily_figures.each do |daily|%>
+    <tr>
+    <td><%=daily.timestamp%></td>
+    <td><%=daily.R01_Completers%></td>
+    <td><%=daily.R02_Starters%></td>
+    <td><%=daily.Recruited%></td>
+    <td><%=daily.R01_Completes_To_R02_Starters_Ratio%> % </td>
+    <td><%=daily.R02_Starters_To_Recruited_Ratio%> % </td>
+    <td><%=daily.R01_Completers_To_Recruited_Ratio%> % </td>
+  </tr>
+  <%end%>
+  </table>
+  </body>
+</html>

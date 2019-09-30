@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  R01_Completers: 1
+  R02_Starters: 1
+  Recruited: 
+  R01_Completes_To_R02_Starters_Ratio: 1
+  R02_Starters_To_Recruited_Ratio: 
+  R01_Completers_To_Recruited_Ratio: 
+
+two:
+  R01_Completers: 1
+  R02_Starters: 1
+  Recruited: 
+  R01_Completes_To_R02_Starters_Ratio: 1
+  R02_Starters_To_Recruited_Ratio: 
+  R01_Completers_To_Recruited_Ratio: 

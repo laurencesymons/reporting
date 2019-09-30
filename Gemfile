@@ -54,3 +54,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "roo", "~> 2.8"
+
+gem "pry", "~> 0.12.2"
+
+gem "activesupport", "~> 6.0"
