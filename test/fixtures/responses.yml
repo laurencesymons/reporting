@@ -1,0 +1,51 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pseudonym: 1
+  pstatus: MyString
+  pcredit_points: 1
+  penter_date: MyString
+  reg_code: MyString
+  numinv1: 1
+  numcpl1: 1
+  numqut1: 1
+  numscn1: 1
+  numstr1: 1
+  numinv2: 1
+  numcpl2: 1
+  numqut2: 1
+  numscn2: 1
+  numstr2: 1
+  numinv3: 1
+  numcpl3: 1
+  numqut3: 1
+  numscn3: 1
+  numstr3: 1
+  m_age: 1
+  m_panel_membership: MyString
+  m_gender_expanded: MyString
+
+two:
+  pseudonym: 1
+  pstatus: MyString
+  pcredit_points: 1
+  penter_date: MyString
+  reg_code: MyString
+  numinv1: 1
+  numcpl1: 1
+  numqut1: 1
+  numscn1: 1
+  numstr1: 1
+  numinv2: 1
+  numcpl2: 1
+  numqut2: 1
+  numscn2: 1
+  numstr2: 1
+  numinv3: 1
+  numcpl3: 1
+  numqut3: 1
+  numscn3: 1
+  numstr3: 1
+  m_age: 1
+  m_panel_membership: MyString
+  m_gender_expanded: MyString

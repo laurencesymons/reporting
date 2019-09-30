@@ -37,7 +37,10 @@ class ImportsController < ApplicationController
           m_age_bands_report: row[9].value.to_s,
           datetime: row[10].value.to_s
         }
+
+
         @import.raw_recruitments.create(raw_recruitment)
+
 
       rescue
         puts "ERROR"
@@ -161,11 +164,9 @@ class ImportsController < ApplicationController
     end
 
         def ratio(val1,val2)
-
           if val1.nonzero?.nil? || val2.nonzero?.nil?
             return 0
           end
-
           val3 = val1.to_f / val2.to_f
           val3 * 100
 

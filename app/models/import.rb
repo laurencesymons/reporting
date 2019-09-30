@@ -1,6 +1,7 @@
 class Import < ApplicationRecord
   has_many :raw_recruitments
   has_many :daily_figures
+  has_many :responses
 
   #
   # r01Completers = RawRecruitment.select(:Day, :id).where(dispcode:'Invited (12)').or(RawRecruitment.select(:Day,:id).where(dispcode:'E-mail could not be delivered (14)')).group(:Day).count(:id)

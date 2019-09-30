@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_27_093838) do
+ActiveRecord::Schema.define(version: 2019_09_30_101147) do
 
   create_table "daily_figures", force: :cascade do |t|
     t.integer "R01_Completers"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2019_09_27_093838) do
     t.integer "import_id"
     t.integer "quarter"
     t.string "timestamp"
+  end
+
+  create_table "import_responses", force: :cascade do |t|
+    t.string "filename"
+    t.string "month"
+    t.string "catagory"
+    t.integer "processedraw"
+    t.integer "processed"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "imports", force: :cascade do |t|
@@ -52,6 +62,35 @@ ActiveRecord::Schema.define(version: 2019_09_27_093838) do
     t.string "datetime"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.integer "pseudonym"
+    t.string "pstatus"
+    t.integer "pcredit_points"
+    t.string "penter_date"
+    t.string "reg_code"
+    t.integer "numinv1"
+    t.integer "numcpl1"
+    t.integer "numqut1"
+    t.integer "numscn1"
+    t.integer "numstr1"
+    t.integer "numinv2"
+    t.integer "numcpl2"
+    t.integer "numqut2"
+    t.integer "numscn2"
+    t.integer "numstr2"
+    t.integer "numinv3"
+    t.integer "numcpl3"
+    t.integer "numqut3"
+    t.integer "numscn3"
+    t.integer "numstr3"
+    t.integer "m_age"
+    t.string "m_panel_membership"
+    t.string "m_gender_expanded"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "import_id"
   end
 
 end
