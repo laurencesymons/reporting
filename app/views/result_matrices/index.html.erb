@@ -1,0 +1,248 @@
+<table style="width:100%">
+  <!--  headers row-->
+  <tr>
+    <th></th>
+    <% if @monthly_youths.present? %>
+      <th colspan="6">Youths</th>
+    <% end %>
+    <% if @monthly_applicants.present? %>
+      <th colspan="6">Applicants</th>
+    <% end %>
+    <% if @monthly_students.present? %>
+      <th colspan="6">Students</th>
+    <% end %>
+    <% if @monthly_graduates.present? %>
+      <th colspan="6">Graduates</th>
+    <% end %>
+    <th colspan="6">Total</th>
+  </tr>
+  <!--  row for month-->
+  <tr>
+    <td>Month</td>
+    <% if @monthly_youths.present? %>
+      <td>Organic</td>
+      <td>UCAS</td>
+      <td>Facebook</td>
+      <td>Money Migpie</td>
+      <td>Save The Student</td>
+      <td>Total</td>
+    <% end %>
+    <% if @monthly_applicants.present? %>
+      <td>Organic</td>
+      <td>UCAS</td>
+      <td>Facebook</td>
+      <td>Money Migpie</td>
+      <td>Save The Student</td>
+      <td>Total</td>
+    <% end %>
+    <% if @monthly_students.present? %>
+      <td>Organic</td>
+      <td>UCAS</td>
+      <td>Facebook</td>
+      <td>Money Migpie</td>
+      <td>Save The Student</td>
+      <td>Total</td>
+    <% end %>
+    <% if @monthly_graduates.present? %>
+      <td>Organic</td>
+      <td>UCAS</td>
+      <td>Facebook</td>
+      <td>Money Migpie</td>
+      <td>Save The Student</td>
+      <td>Total</td>
+    <% end %>
+    <td>Organic</td>
+    <td>UCAS</td>
+    <td>Facebook</td>
+    <td>Money Migpie</td>
+    <td>Save The Student</td>
+    <td>Total</td>
+  </tr>
+
+  <% total_month_keys = @monthly_raw_recruitment.keys %>
+  <% youths = @raw_recruitment.youths %>
+  <% applicants = @raw_recruitment.applicants %>
+  <% students = @raw_recruitment.students %>
+  <% graduates = @raw_recruitment.graduates %>
+  <% organic_raw_recruitment_count = @raw_recruitment.organic.size %>
+  <% ucas_raw_recruitment_count = @raw_recruitment.ucas.size %>
+  <% facebook_raw_recruitment_count = @raw_recruitment.facebook.size %>
+  <% money_magpie_raw_recruitment_count = @raw_recruitment.money_magpie.size %>
+  <% save_the_student_raw_recruitment_count = @raw_recruitment.save_the_student.size %>
+  <% raw_recruitment_count = @raw_recruitment.size %>
+
+  <% if @monthly_youths.present? %>
+    <% organic_youth_count = youths.organic.size %>
+    <% ucas_youth_count = youths.ucas.size %>
+    <% facebook_youth_count = youths.facebook.size %>
+    <% money_magpie_youth_count = youths.money_magpie.size %>
+    <% save_the_student_youth_count = youths.save_the_student.size %>
+    <% youth_count = youths.size %>
+  <% end %>
+
+  <% if @monthly_applicants.present? %>
+    <% organic_applicants_count = applicants.organic.size %>
+    <% ucas_applicants_count = applicants.ucas.size %>
+    <% facebook_applicants_count = applicants.facebook.size %>
+    <% money_magpie_applicants_count = applicants.money_magpie.size %>
+    <% save_the_student_applicants_count = applicants.save_the_student.size %>
+    <% applicants_count = applicants.size %>
+  <% end %>
+
+  <% if @monthly_students.present? %>
+    <% organic_students_count = students.organic.size %>
+    <% ucas_students_count = students.ucas.size %>
+    <% facebook_students_count = students.facebook.size %>
+    <% money_magpie_students_count = students.money_magpie.size %>
+    <% save_the_student_students_count = students.save_the_student.size %>
+    <% students_count = students.size %>
+  <% end %>
+
+  <% if @monthly_graduates.present? %>
+    <% organic_graduates_count = graduates.organic.size %>
+    <% ucas_graduates_count = graduates.ucas.size %>
+    <% facebook_graduates_count = graduates.facebook.size %>
+    <% money_magpie_graduates_count = graduates.money_magpie.size %>
+    <% save_the_student_graduates_count = graduates.save_the_student.size %>
+    <% graduates_count = graduates.size %>
+  <% end %>
+
+
+  <!--  row for total-->
+  <tr>
+    <td>TOTAL</td>
+    <% if @monthly_youths.present? %>
+      <td><%= organic_youth_count %></td>
+      <td><%= ucas_youth_count %></td>
+      <td><%= facebook_youth_count %></td>
+      <td><%= money_magpie_youth_count %></td>
+      <td><%= save_the_student_youth_count %></td>
+      <td><%= youth_count %></td>
+    <% end %>
+    <% if @monthly_applicants.present? %>
+      <td><%= organic_applicants_count %></td>
+      <td><%= ucas_applicants_count %></td>
+      <td><%= facebook_applicants_count %></td>
+      <td><%= money_magpie_applicants_count %></td>
+      <td><%= save_the_student_applicants_count %></td>
+      <td><%= applicants_count %></td>
+    <% end %>
+    <% if @monthly_students.present? %>
+      <td><%= organic_students_count %></td>
+      <td><%= ucas_students_count %></td>
+      <td><%= facebook_students_count %></td>
+      <td><%= money_magpie_students_count %></td>
+      <td><%= save_the_student_students_count %></td>
+      <td><%= students_count %></td>
+    <% end %>
+    <% if @monthly_graduates.present? %>
+      <td><%= organic_graduates_count %></td>
+      <td><%= ucas_graduates_count %></td>
+      <td><%= facebook_graduates_count %></td>
+      <td><%= money_magpie_graduates_count %></td>
+      <td><%= save_the_student_graduates_count %></td>
+      <td><%= graduates_count %></td>
+    <% end %>
+    <td><%= organic_raw_recruitment_count %></td>
+    <td><%= ucas_raw_recruitment_count %></td>
+    <td><%= facebook_raw_recruitment_count %></td>
+    <td><%= money_magpie_raw_recruitment_count %></td>
+    <td><%= save_the_student_raw_recruitment_count %></td>
+    <td><%= raw_recruitment_count %></td>
+  </tr>
+  <!--  row for average-->
+  <tr>
+    <td>AVERAGE</td>
+    <% total_months = total_month_keys.size %>
+
+    <% if @monthly_youths.present? %>
+      <td><%= (organic_youth_count / total_months).to_i %></td>
+      <td><%= (ucas_youth_count / total_months).to_i %></td>
+      <td><%= (facebook_youth_count / total_months).to_i %></td>
+      <td><%= (money_magpie_youth_count / total_months).to_i %></td>
+      <td><%= (save_the_student_youth_count / total_months).to_i %></td>
+      <td><%= (youth_count / total_months).to_i %></td>
+    <% end %>
+    <% if @monthly_applicants.present? %>
+      <td><%= (organic_applicants_count / total_months).to_i %></td>
+      <td><%= (ucas_applicants_count / total_months).to_i %></td>
+      <td><%= (facebook_applicants_count / total_months).to_i %></td>
+      <td><%= (money_magpie_applicants_count / total_months).to_i %></td>
+      <td><%= (save_the_student_applicants_count / total_months).to_i %></td>
+      <td><%= (applicants_count / total_months).to_i %></td>
+    <% end %>
+    <% if @monthly_students.present? %>
+      <td><%= (organic_students_count / total_months).to_i %></td>
+      <td><%= (ucas_students_count / total_months).to_i %></td>
+      <td><%= (facebook_students_count / total_months).to_i %></td>
+      <td><%= (money_magpie_students_count / total_months).to_i %></td>
+      <td><%= (save_the_student_students_count / total_months).to_i %></td>
+      <td><%= (students_count / total_months).to_i %></td>
+    <% end %>
+    <% if @monthly_graduates.present? %>
+      <td><%= (organic_graduates_count / total_months).to_i %></td>
+      <td><%= (ucas_graduates_count / total_months).to_i %></td>
+      <td><%= (facebook_graduates_count / total_months).to_i %></td>
+      <td><%= (money_magpie_graduates_count / total_months).to_i %></td>
+      <td><%= (save_the_student_graduates_count / total_months).to_i %></td>
+      <td><%= (graduates_count / total_months).to_i %></td>
+    <% end %>
+    <td><%= (organic_raw_recruitment_count / total_months).to_i %></td>
+    <td><%= (ucas_raw_recruitment_count / total_months).to_i %></td>
+    <td><%= (facebook_raw_recruitment_count / total_months).to_i %></td>
+    <td><%= (money_magpie_raw_recruitment_count / total_months).to_i %></td>
+    <td><%= (save_the_student_raw_recruitment_count / total_months).to_i %></td>
+    <td><%= (raw_recruitment_count / total_months).to_i %></td>
+  </tr>
+
+  <!--  raw monthly data-->
+  <% total_month_keys.each do |month| %>
+    <tr>
+      <td><%= month %></td>
+      <% if @monthly_youths.present? %>
+        <% youth_row = @monthly_youths[month] %>
+        <td><%= youth_row.select {|object| object.organic?}.size %></td>
+        <td><%= youth_row.select {|object| object.ucas?}.size %></td>
+        <td><%= youth_row.select {|object| object.facebook?}.size %></td>
+        <td><%= youth_row.select {|object| object.money_magpie?}.size %></td>
+        <td><%= youth_row.select {|object| object.save_the_student?}.size %></td>
+        <td><%= youth_row.size %></td>
+      <% end %>
+      <% if @monthly_applicants.present? %>
+        <% applicants_row = @monthly_applicants[month] %>
+        <td><%= applicants_row.select {|object| object.organic?}.size %></td>
+        <td><%= applicants_row.select {|object| object.ucas?}.size %></td>
+        <td><%= applicants_row.select {|object| object.facebook?}.size %></td>
+        <td><%= applicants_row.select {|object| object.money_magpie?}.size %></td>
+        <td><%= applicants_row.select {|object| object.save_the_student?}.size %></td>
+        <td><%= applicants_row.size %></td>
+      <% end %>
+      <% if @monthly_students.present? %>
+        <% students_row = @monthly_students[month] %>
+        <td><%= students_row.select {|object| object.organic?}.size %></td>
+        <td><%= students_row.select {|object| object.ucas?}.size %></td>
+        <td><%= students_row.select {|object| object.facebook?}.size %></td>
+        <td><%= students_row.select {|object| object.money_magpie?}.size %></td>
+        <td><%= students_row.select {|object| object.save_the_student?}.size %></td>
+        <td><%= students_row.size %></td>
+      <% end %>
+      <% if @monthly_graduates.present? %>
+        <% graduates_row = @monthly_graduates[month] %>
+        <td><%= graduates_row.select {|object| object.organic?}.size %></td>
+        <td><%= graduates_row.select {|object| object.ucas?}.size %></td>
+        <td><%= graduates_row.select {|object| object.facebook?}.size %></td>
+        <td><%= graduates_row.select {|object| object.money_magpie?}.size %></td>
+        <td><%= graduates_row.select {|object| object.save_the_student?}.size %></td>
+        <td><%= graduates_row.size %></td>
+      <% end %>
+
+      <% total_montly_data = @monthly_raw_recruitment[month] %>
+      <td><%= total_montly_data.select {|object| object.organic?}.size %></td>
+      <td><%= total_montly_data.select {|object| object.ucas?}.size %></td>
+      <td><%= total_montly_data.select {|object| object.facebook?}.size %></td>
+      <td><%= total_montly_data.select {|object| object.money_magpie?}.size %></td>
+      <td><%= total_montly_data.select {|object| object.save_the_student?}.size %></td>
+      <td><%= total_montly_data.size %></td>
+    </tr>
+  <% end %>
+</table>

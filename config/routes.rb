@@ -7,4 +7,6 @@ Rails.application.routes.draw do
     resources :rawrecruitments
     resources :daily_figures
   end
+
+  resources :result_matrices, only: [:index]
 end

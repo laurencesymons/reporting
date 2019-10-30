@@ -22,7 +22,7 @@ class ImportResponsesController < ApplicationController
       processed: 0,
       })
 
-      Roo:Excelx.new(upload_path).each_row_streaming(offset: 1) do |row|
+      Roo::Excelx.new(upload_path).each_row_streaming(offset: 1) do |row|
         begin
 
         raw_response = {

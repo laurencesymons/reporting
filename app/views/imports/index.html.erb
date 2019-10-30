@@ -1,3 +1,4 @@
+<%= link_to 'Result Matrices', result_matrices_path %>
 <section class="imports ph1 pv2">
     <%["recruitments", "unsubscribes", "signups"].each do |catagory|%>
         <section class="ba b--gray flex flex-column justify-end mh1">
@@ -8,7 +9,7 @@
                 <%@imports.filter{|i| i.catagory == catagory}.each do |import|%>
                     <article class="flex items-center justify-between pa2 br2 bg-near-white ma1">
                         <div><%=link_to "#{import.filename} (#{import.raw_recruitments.count} rows)", import_path(import.id)%></div>
-                        <div><%=link_to "delete", import_path(import), method: :delete%>
+                        <div><%=link_to "delete", import_path(import), method: :delete%></div>
                     </article>
                 <%end%>
             </main>
