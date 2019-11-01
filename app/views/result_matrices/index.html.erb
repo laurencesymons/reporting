@@ -107,7 +107,6 @@
     <% graduates_count = graduates.size %>
   <% end %>
 
-
   <!--  row for total-->
   <tr>
     <td>TOTAL</td>
@@ -152,9 +151,10 @@
   </tr>
   <!--  row for average-->
   <tr>
-    <td>AVERAGE</td>
     <% total_months = total_month_keys.size %>
-
+    <% unless total_months.zero? %>
+      <td>AVERAGE</td>
+    <% end %>
     <% if @monthly_youths.present? %>
       <td><%= (organic_youth_count / total_months).to_i %></td>
       <td><%= (ucas_youth_count / total_months).to_i %></td>
@@ -187,20 +187,22 @@
       <td><%= (save_the_student_graduates_count / total_months).to_i %></td>
       <td><%= (graduates_count / total_months).to_i %></td>
     <% end %>
-    <td><%= (organic_raw_recruitment_count / total_months).to_i %></td>
-    <td><%= (ucas_raw_recruitment_count / total_months).to_i %></td>
-    <td><%= (facebook_raw_recruitment_count / total_months).to_i %></td>
-    <td><%= (money_magpie_raw_recruitment_count / total_months).to_i %></td>
-    <td><%= (save_the_student_raw_recruitment_count / total_months).to_i %></td>
-    <td><%= (raw_recruitment_count / total_months).to_i %></td>
+    <% unless total_months.zero? %>
+      <td><%= (organic_raw_recruitment_count / total_months).to_i %></td>
+      <td><%= (ucas_raw_recruitment_count / total_months).to_i %></td>
+      <td><%= (facebook_raw_recruitment_count / total_months).to_i %></td>
+      <td><%= (money_magpie_raw_recruitment_count / total_months).to_i %></td>
+      <td><%= (save_the_student_raw_recruitment_count / total_months).to_i %></td>
+      <td><%= (raw_recruitment_count / total_months).to_i %></td>
+    <% end %>
   </tr>
 
   <!--  raw monthly data-->
-  <% total_month_keys.each do |month| %>
+  <% total_month_keys.each do |import| %>
     <tr>
-      <td><%= month %></td>
+      <td><%= "#{import.month}-01".to_date.strftime('%B %Y') %></td>
       <% if @monthly_youths.present? %>
-        <% youth_row = @monthly_youths[month] %>
+        <% youth_row = @monthly_youths[import] %>
         <td><%= youth_row.select {|object| object.organic?}.size %></td>
         <td><%= youth_row.select {|object| object.ucas?}.size %></td>
         <td><%= youth_row.select {|object| object.facebook?}.size %></td>
@@ -209,7 +211,7 @@
         <td><%= youth_row.size %></td>
       <% end %>
       <% if @monthly_applicants.present? %>
-        <% applicants_row = @monthly_applicants[month] %>
+        <% applicants_row = @monthly_applicants[import] %>
         <td><%= applicants_row.select {|object| object.organic?}.size %></td>
         <td><%= applicants_row.select {|object| object.ucas?}.size %></td>
         <td><%= applicants_row.select {|object| object.facebook?}.size %></td>
@@ -218,7 +220,7 @@
         <td><%= applicants_row.size %></td>
       <% end %>
       <% if @monthly_students.present? %>
-        <% students_row = @monthly_students[month] %>
+        <% students_row = @monthly_students[import] %>
         <td><%= students_row.select {|object| object.organic?}.size %></td>
         <td><%= students_row.select {|object| object.ucas?}.size %></td>
         <td><%= students_row.select {|object| object.facebook?}.size %></td>
@@ -227,7 +229,7 @@
         <td><%= students_row.size %></td>
       <% end %>
       <% if @monthly_graduates.present? %>
-        <% graduates_row = @monthly_graduates[month] %>
+        <% graduates_row = @monthly_graduates[import] %>
         <td><%= graduates_row.select {|object| object.organic?}.size %></td>
         <td><%= graduates_row.select {|object| object.ucas?}.size %></td>
         <td><%= graduates_row.select {|object| object.facebook?}.size %></td>
@@ -236,13 +238,13 @@
         <td><%= graduates_row.size %></td>
       <% end %>
 
-      <% total_montly_data = @monthly_raw_recruitment[month] %>
-      <td><%= total_montly_data.select {|object| object.organic?}.size %></td>
-      <td><%= total_montly_data.select {|object| object.ucas?}.size %></td>
-      <td><%= total_montly_data.select {|object| object.facebook?}.size %></td>
-      <td><%= total_montly_data.select {|object| object.money_magpie?}.size %></td>
-      <td><%= total_montly_data.select {|object| object.save_the_student?}.size %></td>
-      <td><%= total_montly_data.size %></td>
+      <% total_monthly_data = @monthly_raw_recruitment[import] %>
+      <td><%= total_monthly_data.select {|object| object.organic?}.size %></td>
+      <td><%= total_monthly_data.select {|object| object.ucas?}.size %></td>
+      <td><%= total_monthly_data.select {|object| object.facebook?}.size %></td>
+      <td><%= total_monthly_data.select {|object| object.money_magpie?}.size %></td>
+      <td><%= total_monthly_data.select {|object| object.save_the_student?}.size %></td>
+      <td><%= total_monthly_data.size %></td>
     </tr>
   <% end %>
 </table>

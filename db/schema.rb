@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_09_30_101147) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "daily_figures", force: :cascade do |t|
     t.integer "R01_Completers"
     t.integer "R02_Starters"

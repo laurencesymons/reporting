@@ -1,0 +1,35 @@
+<table>
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>R01 completers</th>
+      <th>R02 starters</th>
+      <th>Recruited</th>
+      <th>R01 completers : R02 starters Ratio</th>
+      <th>R02 starters : Recruited Ratio</th>
+      <th>R01 completers : Recruited Ratio</th>
+    </tr>
+  </thead>
+
+  <% monthly_r1_completer =  @monthly_figures.sum(:R01_Completers) %>
+  <% monthly_r2_starters = @monthly_figures.sum(:R02_Starters) %>
+  <% monthly_recruited = @monthly_figures.sum(:Recruited) %>
+
+  <tbody>
+    <% @monthly_figures.count.keys.each do |key| %>
+      <tr>
+        <td><%= key %></td>
+        <% r1_completer = monthly_r1_completer[key] %>
+        <% r2_starters = monthly_r2_starters[key] %>
+        <% recruited = monthly_recruited[key] %>
+
+        <td><%= r1_completer %></td>
+        <td><%= r2_starters %></td>
+        <td><%= recruited %></td>
+        <td><%= r1_completer.zero? ? 0 : (r2_starters.to_f / r1_completer.to_f).round(2) %></td>
+        <td><%= r2_starters.zero? ? 0 : (recruited.to_f / r2_starters.to_f).round(2) %></td>
+        <td><%= r1_completer.zero? ? 0 : (recruited.to_f / r1_completer.to_f).round(2) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

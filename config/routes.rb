@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'monthly_figures/index'
   get 'import_responses/create'
   get 'import_responses/destroy'
   root "imports#index"
@@ -9,4 +10,5 @@ Rails.application.routes.draw do
   end
 
   resources :result_matrices, only: [:index]
+  resources :monthly_figures, only: [:index]
 end

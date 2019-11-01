@@ -1,7 +1,7 @@
 class ResultMatricesController < ApplicationController
 
   def index
-    @raw_recruitment = RawRecruitment.with_valid_dates
+    @raw_recruitment = RawRecruitment.all
     @monthly_raw_recruitment = get_monthly_raw_recruitment
     @monthly_students = get_monthly_students
     @monthly_youths = get_monthly_youths

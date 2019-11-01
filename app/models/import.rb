@@ -1,6 +1,6 @@
 class Import < ApplicationRecord
-  has_many :raw_recruitments
-  has_many :daily_figures
+  has_many :raw_recruitments, dependent: :destroy
+  has_many :daily_figures, dependent: :destroy
   has_many :responses
 
   #

@@ -1,6 +1,5 @@
 class DailyFigure < ApplicationRecord
-  belongs to :import
-
+  belongs_to :import
 
     # 
     # r01Completers = RawRecruitment.select(:Day, :id).where(dispcode:'Invited (12)').or(RawRecruitment.select(:Day,:id).where(dispcode:'E-mail could not be delivered (14)')).group(:Day).count(:id)
