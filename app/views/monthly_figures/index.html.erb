@@ -29,8 +29,12 @@
         <td><%= r1_completer.zero? ? 0 : (r2_starters.to_f / r1_completer.to_f).round(2) *100 %>%
           <meter value="<%(r2_starters.to_f / r1_completer.to_f).round(2) *100%>" min="0" max="100"></meter>
         </td>
-        <td><%= r2_starters.zero? ? 0 : (r2_starters.to_f / recruited.to_f).round(2) *100 %>%</td>
-        <td><%= r1_completer.zero? ? 0 : (recruited.to_f / r1_completer.to_f).round(2) *100 %>%</td>
+        <td><%= r2_starters.zero? ? 0 : (r2_starters.to_f / recruited.to_f).round(2) *100 %>%
+          <meter value="<%(r2_starters.to_f / recruited.to_f).round(2) *100%>" min="0" max="100"></meter>
+        </td>
+        <td><%= r1_completer.zero? ? 0 : (recruited.to_f / r1_completer.to_f).round(2) *100 %>%
+          <meter value="<%(recruited.to_f / r1_completer.to_f).round(2) *100%>" min="0" max="100"></meter>
+        </td>
       </tr>
     <% end %>
   </tbody>
