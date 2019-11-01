@@ -2,7 +2,7 @@
 <br>
 <%= link_to 'Monthly Figures', monthly_figures_index_path %>
 <section class="imports ph1 pv2">
-    <%["recruitments", "unsubscribes", "signups"].each do |catagory|%>
+    <%["recruitments"].each do |catagory|%>
         <section class="ba b--gray flex flex-column justify-end mh1">
             <header class="pa2">
                 <h1 class="mv0 pv2 tc bb b--gray"><%=catagory.capitalize%></h1>
