@@ -24,11 +24,11 @@
         <% recruited = monthly_recruited[key] %>
 
         <td><%= r1_completer %></td>
-        <td><%= r2_starters %></td>
+        <td><%= r2_starters + recruited %></td>
         <td><%= recruited %></td>
-        <td><%= r1_completer.zero? ? 0 : (r2_starters.to_f / r1_completer.to_f).round(2) %></td>
-        <td><%= r2_starters.zero? ? 0 : (recruited.to_f / r2_starters.to_f).round(2) %></td>
-        <td><%= r1_completer.zero? ? 0 : (recruited.to_f / r1_completer.to_f).round(2) %></td>
+        <td><%= r1_completer.zero? ? 0 : (r2_starters.to_f / r1_completer.to_f).round(2) *100 %>%</td>
+        <td><%= r2_starters.zero? ? 0 : (recruited.to_f / r2_starters.to_f).round(2) *100 %>%</td>
+        <td><%= r1_completer.zero? ? 0 : (recruited.to_f / r1_completer.to_f).round(2) *100 %>%</td>
       </tr>
     <% end %>
   </tbody>
