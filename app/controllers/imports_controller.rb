@@ -130,7 +130,7 @@ class ImportsController < ApplicationController
       hash[Time.new(year, month, day).strftime("%F")] = [
         raw_r01[day],
         raw_r02[day],
-        raw_recruited[day],
+        raw_recruited[day]
 
       ]
 
