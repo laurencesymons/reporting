@@ -5,7 +5,7 @@ require "pry"
 class ImportsController < ApplicationController
   def create
     upload_file = params[:import][:file]
-    upload_filename = upload_file.original_filename.gsub!(" ", "_")
+    upload_filename = upload_file.original_filename
     upload_path = Rails.root.join("public", "uploads", upload_filename)
 
     File.open(upload_path, "wb") do |file|
@@ -90,20 +90,15 @@ class ImportsController < ApplicationController
     quarter = [year, quarters[month]].join("")
 
     raw_r01 = RawRecruitment.select(:day, :dispcode).where(["import_id = ?", import_id]).group(:day).count(:dispcode)
+    raw_r02 = RawRecruitment.select(:day, :dispcode).where("import_id IS ? AND dispcode IN ('Suspended (22)', 'Inactive (13)','Screened out (37)','Not yet started (20)','Currently responding (21)')", import_id).group(:day).count(:dispcode)
+    raw_recruited = RawRecruitment.select(:day, :dispcode).where("import_id IS ? AND dispcode IN ('Completed (31)','Custom completed 1 (33)','Completed after break (32)')", import_id).group(:day).count(:dispcode)
 
-    raw_aggregation = ['Suspended (22)', 'Screened out (37)', 'Completed (31)', 'Custom completed 1 (33)'].map {|dispcode|
-      RawRecruitment.select(:day, :dispcode).where(["import_id = ? AND dispcode = ?", import_id, dispcode]).group(:day).count(:dispcode)
-    }.each_slice(2).to_a
-
-    r02_rec = format_raw_recruitments_data_r02_rec(raw_aggregation, year, month)
-    r01_Completers = format_raw_recruitments_data_r01(raw_r01, year, month) #.each do |timestamp,data|
-    r02_rec.each {|timestamp, array| r02_rec[timestamp] = array.unshift(r01_Completers[timestamp])}
-
-    r02_rec.each do |timestamp, data|
+    format_raw(year,month,raw_r01, raw_r02, raw_recruited).each do |timestamp, data|
       r01_Completers, r02_Starters, recruited = data
-      r01_Completes_To_R02_Starters_Ratio = ratio(r02_Starters, r01_Completers)
-      r02_Starters_To_Recruited_Ratio = ratio(r02_Starters, recruited)
-      r01_Completers_To_Recruited_Ratio = ratio(recruited, r01_Completers)
+      r01_Completes_To_R02_Starters_Ratio = ratio(r02_Starters,r01_Completers)
+      r02_Starters_To_Recruited_Ratio =  ratio(recruited,r02_Starters)
+      r01_Completers_To_Recruited_Ratio = ratio(recruited,r01_Completers)
+
 
       daily_figure = {
 
@@ -122,41 +117,39 @@ class ImportsController < ApplicationController
     end
   end
 
-  def format_raw_recruitments_data_r02_rec(data, year, month)
-    # split up the query results
-    # make the hashes contained in the arrays return 0 as default if there is no key
-    # if a day is missing (0 + 5) will return 5 (nil + 5) will error
 
-    ro2, rec = data.each {|ro| ro.each {|r| r.default = 0}}
 
-    # make a hash with each day of the month as a key
-    # {"2019-01-01"=>[12, 2, 12]} this is what we are building
-    # the three positions in the array correspond to three columns in the display table for that day
+  def format_raw(year, month, raw_r01, raw_r02, raw_recruited)
+    raw_r01.default = 0
+    raw_r02.default = 0
+    raw_recruited.default = 0
 
     last_day = (Time.new(year, month.to_i + 1) - 1).day
 
-    (1..last_day).to_a.reduce(Hash.new) {|hash, day|
+    data = (1..last_day).to_a.reduce(Hash.new) {|hash, day|
       hash[Time.new(year, month, day).strftime("%F")] = [
-          ro2.first[day] + ro2.last[day],
-          rec.first[day] + rec.last[day],
+        raw_r01[day],
+        raw_r02[day],
+        raw_recruited[day],
+
       ]
 
       hash
     }
+
+
+
   end
 
-  def format_raw_recruitments_data_r01(data, year, month)
 
-    data.default = 0
 
-    last_day = (Time.new(year, month.to_i + 1) - 1).day
 
-    (1..last_day).to_a.reduce(Hash.new) {|hash, day|
-      hash[Time.new(year, month, day).strftime("%F")] = data[day]
 
-      hash
-    }
-  end
+
+
+
+
+
 
   def ratio(val1, val2)
     if val1.nonzero?.nil? || val2.nonzero?.nil?
