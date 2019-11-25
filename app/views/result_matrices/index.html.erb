@@ -150,9 +150,9 @@
   <!--  row for average-->
   <tr>
     <% total_months = total_month_keys.size %>
-    <% unless total_months.zero? %>
+
       <td>AVERAGE</td>
-    <% end %>
+
 
       <td><%= (organic_youth_count / total_months).to_i %></td>
       <td><%= (ucas_youth_count / total_months).to_i %></td>
