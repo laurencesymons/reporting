@@ -195,54 +195,7 @@
   </tr>
 
   <!--  raw monthly data-->
-  <% total_month_keys.each do |import| %>
-    <tr>
-      <td><%= "#{import.month}-01".to_date.strftime('%B %Y') %></td>
 
-        <% youth_row = @monthly_youths[import] %>
-        <td><%= youth_row.select {|object| object.organic?}.size %></td>
-        <td><%= youth_row.select {|object| object.ucas?}.size %></td>
-        <td><%= youth_row.select {|object| object.facebook?}.size %></td>
-        <td><%= youth_row.select {|object| object.money_magpie?}.size %></td>
-        <td><%= youth_row.select {|object| object.save_the_student?}.size %></td>
-        <td><%= youth_row.size %></td>
-
-
-        <% applicants_row = @monthly_applicants[import] %>
-        <td><%= applicants_row.select {|object| object.organic?}.size %></td>
-        <td><%= applicants_row.select {|object| object.ucas?}.size %></td>
-        <td><%= applicants_row.select {|object| object.facebook?}.size %></td>
-        <td><%= applicants_row.select {|object| object.money_magpie?}.size %></td>
-        <td><%= applicants_row.select {|object| object.save_the_student?}.size %></td>
-        <td><%= applicants_row.size %></td>
-
-
-        <% students_row = @monthly_students[import] %>
-        <td><%= students_row.select {|object| object.organic?}.size %></td>
-        <td><%= students_row.select {|object| object.ucas?}.size %></td>
-        <td><%= students_row.select {|object| object.facebook?}.size %></td>
-        <td><%= students_row.select {|object| object.money_magpie?}.size %></td>
-        <td><%= students_row.select {|object| object.save_the_student?}.size %></td>
-        <td><%= students_row.size %></td>
-
-
-        <% graduates_row = @monthly_graduates[import] %>
-        <td><%= graduates_row.select {|object| object.organic?}.size %></td>
-        <td><%= graduates_row.select {|object| object.ucas?}.size %></td>
-        <td><%= graduates_row.select {|object| object.facebook?}.size %></td>
-        <td><%= graduates_row.select {|object| object.money_magpie?}.size %></td>
-        <td><%= graduates_row.select {|object| object.save_the_student?}.size %></td>
-        <td><%= graduates_row.size %></td>
-
-      <% total_monthly_data = @monthly_raw_recruitment[import] %>
-      <td><%= total_monthly_data.select {|object| object.organic?}.size %></td>
-      <td><%= total_monthly_data.select {|object| object.ucas?}.size %></td>
-      <td><%= total_monthly_data.select {|object| object.facebook?}.size %></td>
-      <td><%= total_monthly_data.select {|object| object.money_magpie?}.size %></td>
-      <td><%= total_monthly_data.select {|object| object.save_the_student?}.size %></td>
-      <td><%= total_monthly_data.size %></td>
-    </tr>
-  <% end %>
   <tr>
 
     <td>January 2019</td>
@@ -292,5 +245,54 @@
 
 
   </tr>
+
+  <% total_month_keys.each do |import| %>
+    <tr>
+      <td><%= "#{import.month}-01".to_date.strftime('%B %Y') %></td>
+
+        <% youth_row = @monthly_youths[import] %>
+        <td><%= youth_row.select {|object| object.organic?}.size %></td>
+        <td><%= youth_row.select {|object| object.ucas?}.size %></td>
+        <td><%= youth_row.select {|object| object.facebook?}.size %></td>
+        <td><%= youth_row.select {|object| object.money_magpie?}.size %></td>
+        <td><%= youth_row.select {|object| object.save_the_student?}.size %></td>
+        <td><%= youth_row.size %></td>
+
+
+        <% applicants_row = @monthly_applicants[import] %>
+        <td><%= applicants_row.select {|object| object.organic?}.size %></td>
+        <td><%= applicants_row.select {|object| object.ucas?}.size %></td>
+        <td><%= applicants_row.select {|object| object.facebook?}.size %></td>
+        <td><%= applicants_row.select {|object| object.money_magpie?}.size %></td>
+        <td><%= applicants_row.select {|object| object.save_the_student?}.size %></td>
+        <td><%= applicants_row.size %></td>
+
+
+        <% students_row = @monthly_students[import] %>
+        <td><%= students_row.select {|object| object.organic?}.size %></td>
+        <td><%= students_row.select {|object| object.ucas?}.size %></td>
+        <td><%= students_row.select {|object| object.facebook?}.size %></td>
+        <td><%= students_row.select {|object| object.money_magpie?}.size %></td>
+        <td><%= students_row.select {|object| object.save_the_student?}.size %></td>
+        <td><%= students_row.size %></td>
+
+
+        <% graduates_row = @monthly_graduates[import] %>
+        <td><%= graduates_row.select {|object| object.organic?}.size %></td>
+        <td><%= graduates_row.select {|object| object.ucas?}.size %></td>
+        <td><%= graduates_row.select {|object| object.facebook?}.size %></td>
+        <td><%= graduates_row.select {|object| object.money_magpie?}.size %></td>
+        <td><%= graduates_row.select {|object| object.save_the_student?}.size %></td>
+        <td><%= graduates_row.size %></td>
+
+      <% total_monthly_data = @monthly_raw_recruitment[import] %>
+      <td><%= total_monthly_data.select {|object| object.organic?}.size %></td>
+      <td><%= total_monthly_data.select {|object| object.ucas?}.size %></td>
+      <td><%= total_monthly_data.select {|object| object.facebook?}.size %></td>
+      <td><%= total_monthly_data.select {|object| object.money_magpie?}.size %></td>
+      <td><%= total_monthly_data.select {|object| object.save_the_student?}.size %></td>
+      <td><%= total_monthly_data.size %></td>
+    </tr>
+  <% end %>
 
 </table>
