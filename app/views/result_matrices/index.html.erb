@@ -109,43 +109,43 @@
   <tr>
     <td>TOTAL</td>
 
-    <b>  <td><%= organic_youth_count %></td> </b>
-    <b>  <td><%= ucas_youth_count %></td></b>
-    <b>  <td><%= facebook_youth_count %></td></b>
-    <b>  <td><%= money_magpie_youth_count %></td></b>
-    <b>  <td><%= save_the_student_youth_count %></td></b>
-    <b>  <td><%= youth_count %></td></b>
+    <b>  <td class="youth"><%= organic_youth_count %></td> </b>
+    <b>  <td class="youth"><%= ucas_youth_count %></td></b>
+    <b>  <td class="youth"><%= facebook_youth_count %></td></b>
+    <b>  <td class="youth"><%= money_magpie_youth_count %></td></b>
+    <b>  <td class="youth"><%= save_the_student_youth_count %></td></b>
+    <b>  <td class="youth"><%= youth_count %></td></b>
 
 
-    <b>  <td><%= organic_applicants_count %></td></b>
-    <b>  <td><%= ucas_applicants_count %></td></b>
-    <b>  <td><%= facebook_applicants_count %></td></b>
-    <b>  <td><%= money_magpie_applicants_count %></td></b>
-    <b>  <td><%= save_the_student_applicants_count %></td></b>
-    <b>  <td><%= applicants_count %></td></b>
+    <b>  <td class="applicant"><%= organic_applicants_count %></td></b>
+    <b>  <td class="applicant"><%= ucas_applicants_count %></td></b>
+    <b>  <td class="applicant"><%= facebook_applicants_count %></td></b>
+    <b>  <td class="applicant"><%= money_magpie_applicants_count %></td></b>
+    <b>  <td class="applicant"><%= save_the_student_applicants_count %></td></b>
+    <b>  <td class="applicant"><%= applicants_count %></td></b>
 
 
-    <b>  <td><%= organic_students_count %></td></b>
-    <b>  <td><%= ucas_students_count %></td></b>
-    <b>  <td><%= facebook_students_count %></td></b>
-    <b>  <td><%= money_magpie_students_count %></td></b>
-    <b>  <td><%= save_the_student_students_count %></td></b>
-    <b>  <td><%= students_count %></td></b>
+    <b>  <td class="student"><%= organic_students_count %></td></b>
+    <b>  <td class="student"><%= ucas_students_count %></td></b>
+    <b>  <td class="student"><%= facebook_students_count %></td></b>
+    <b>  <td class="student"><%= money_magpie_students_count %></td></b>
+    <b>  <td class="student"><%= save_the_student_students_count %></td></b>
+    <b>  <td class="student"><%= students_count %></td></b>
 
 
-    <b>  <td><%= organic_graduates_count %></td></b>
-    <b>  <td><%= ucas_graduates_count %></td></b>
-    <b>  <td><%= facebook_graduates_count %></td></b>
-    <b>  <td><%= money_magpie_graduates_count %></td></b>
-    <b>  <td><%= save_the_student_graduates_count %></td></b>
-    <b>  <td><%= graduates_count %></td></b>
+    <b>  <td class ="graduate"><%= organic_graduates_count %></td></b>
+    <b>  <td class ="graduate"><%= ucas_graduates_count %></td></b>
+    <b>  <td class ="graduate"><%= facebook_graduates_count %></td></b>
+    <b>  <td class ="graduate"><%= money_magpie_graduates_count %></td></b>
+    <b>  <td class ="graduate"><%= save_the_student_graduates_count %></td></b>
+    <b>  <td class ="graduate"><%= graduates_count %></td></b>
 
-  <b>  <td><%= organic_raw_recruitment_count %></td></b>
-  <b>  <td><%= ucas_raw_recruitment_count %></td></b>
-  <b>  <td><%= facebook_raw_recruitment_count %></td></b>
-  <b>  <td><%= money_magpie_raw_recruitment_count %></td></b>
-  <b>  <td><%= save_the_student_raw_recruitment_count %></td></b>
-  <b>  <td><%= raw_recruitment_count %></td></b>
+  <b>  <td class="total"><%= organic_raw_recruitment_count %></td></b>
+  <b>  <td class="total"><%= ucas_raw_recruitment_count %></td></b>
+  <b>  <td class="total"><%= facebook_raw_recruitment_count %></td></b>
+  <b>  <td class="total"><%= money_magpie_raw_recruitment_count %></td></b>
+  <b>  <td class="total"><%= save_the_student_raw_recruitment_count %></td></b>
+  <b>  <td class="total"><%= raw_recruitment_count %></td></b>
   </tr>
   <!--  row for average-->
   <tr>
@@ -154,35 +154,35 @@
       <td>AVERAGE</td>
 
 
-    <b>  <td><%= (organic_youth_count / total_months).to_i %></td></b>
-    <b>  <td><%= (ucas_youth_count / total_months).to_i %></td></b>
-    <b>  <td><%= (facebook_youth_count / total_months).to_i %></td></b>
-    <b>  <td><%= (money_magpie_youth_count / total_months).to_i %></td></b>
-    <b>  <td><%= (save_the_student_youth_count / total_months).to_i %></td></b>
-    <b>  <td><%= (youth_count / total_months).to_i %></td></b>
+    <b>  <td class="youth"><%= (organic_youth_count / total_months).to_i %></td></b>
+    <b>  <td class="youth"><%= (ucas_youth_count / total_months).to_i %></td></b>
+    <b>  <td class="youth"><%= (facebook_youth_count / total_months).to_i %></td></b>
+    <b>  <td class="youth"><%= (money_magpie_youth_count / total_months).to_i %></td></b>
+    <b>  <td class="youth"><%= (save_the_student_youth_count / total_months).to_i %></td></b>
+    <b>  <td class="youth"><%= (youth_count / total_months).to_i %></td></b>
 
 
-    <b>  <td><%= (organic_applicants_count / total_months).to_i %></td></b>
-    <b>  <td><%= (ucas_applicants_count / total_months).to_i %></td></b>
-    <b>  <td><%= (facebook_applicants_count / total_months).to_i %></td></b>
-    <b>  <td><%= (money_magpie_applicants_count / total_months).to_i %></td></b>
-    <b>  <td><%= (save_the_student_applicants_count / total_months).to_i %></td></b>
-    <b>  <td><%= (applicants_count / total_months).to_i %></td></b>
+    <b>  <td class="applicant"><%= (organic_applicants_count / total_months).to_i %></td></b>
+    <b>  <td class="applicant"><%= (ucas_applicants_count / total_months).to_i %></td></b>
+    <b>  <td class="applicant"><%= (facebook_applicants_count / total_months).to_i %></td></b>
+    <b>  <td class="applicant"><%= (money_magpie_applicants_count / total_months).to_i %></td></b>
+    <b>  <td class="applicant"><%= (save_the_student_applicants_count / total_months).to_i %></td></b>
+    <b>  <td class="applicant"><%= (applicants_count / total_months).to_i %></td></b>
 
 
-    <b>  <td><%= (organic_students_count / total_months).to_i %></td></b>
-    <b>  <td><%= (ucas_students_count / total_months).to_i %></td></b>
-    <b>  <td><%= (facebook_students_count / total_months).to_i %></td></b>
-    <b>  <td><%= (money_magpie_students_count / total_months).to_i %></td></b>
-    <b>  <td><%= (save_the_student_students_count / total_months).to_i %></td></b>
-    <b>  <td><%= (students_count / total_months).to_i %></td></b>
+    <b>  <td class="student"><%= (organic_students_count / total_months).to_i %></td></b>
+    <b>  <td class="student"><%= (ucas_students_count / total_months).to_i %></td></b>
+    <b>  <td class="student"><%= (facebook_students_count / total_months).to_i %></td></b>
+    <b>  <td class="student"><%= (money_magpie_students_count / total_months).to_i %></td></b>
+    <b>  <td class="student"><%= (save_the_student_students_count / total_months).to_i %></td></b>
+    <b>  <td class="student"><%= (students_count / total_months).to_i %></td></b>
 
-    <b>  <td><%= (organic_graduates_count / total_months).to_i %></td></b>
-    <b>  <td><%= (ucas_graduates_count / total_months).to_i %></td></b>
-    <b>  <td><%= (facebook_graduates_count / total_months).to_i %></td></b>
-    <b>  <td><%= (money_magpie_graduates_count / total_months).to_i %></td></b>
-    <b>  <td><%= (save_the_student_graduates_count / total_months).to_i %></td></b>
-    <b>  <td><%= (graduates_count / total_months).to_i %></td></b>
+    <b>  <td class="graduate"><%= (organic_graduates_count / total_months).to_i %></td></b>
+    <b>  <td class="graduate"><%= (ucas_graduates_count / total_months).to_i %></td></b>
+    <b>  <td class="graduate"><%= (facebook_graduates_count / total_months).to_i %></td></b>
+    <b>  <td class="graduate"><%= (money_magpie_graduates_count / total_months).to_i %></td></b>
+    <b>  <td class="graduate"><%= (save_the_student_graduates_count / total_months).to_i %></td></b>
+    <b>  <td class="graduate"><%= (graduates_count / total_months).to_i %></td></b>
 
     <% unless total_months.zero? %>
     <b>  <td><%= (organic_raw_recruitment_count / total_months).to_i %></td></b>
@@ -470,33 +470,33 @@
     <td class="youth">28</td>
     <td class="youth">3590</td>
 
-    <td >187</td>
-    <td>4426</td>
-    <td>216</td>
-    <td>0</td>
-    <td>11</td>
-    <td>4840</td>
+    <td class ="applicant">187</td>
+    <td class ="applicant">4426</td>
+    <td class ="applicant">216</td>
+    <td class ="applicant">0</td>
+    <td class ="applicant">11</td>
+    <td class ="applicant">4840</td>
 
-    <td>487</td>
-    <td>320</td>
-    <td>2220</td>
-    <td>1</td>
-    <td>53</td>
-    <td>3081</td>
+    <td class ="student">487</td>
+    <td class ="student">320</td>
+    <td class ="student">2220</td>
+    <td class ="student">1</td>
+    <td class ="student">53</td>
+    <td class ="student">3081</td>
 
-    <td>74</td>
-    <td>13</td>
-    <td>207</td>
-    <td>2</td>
-    <td>14</td>
-    <td>750</td>
+    <td class ="graduate">74</td>
+    <td class ="graduate">13</td>
+    <td class ="graduate">207</td>
+    <td class ="graduate">2</td>
+    <td class ="graduate">14</td>
+    <td class ="graduate">750</td>
 
-  <td>1035</td>
-  <td>6154</td>
-  <td>3925</td>
-  <td>10</td>
-  <td>106</td>
-  <td>11320</td>
+  <td class ="total">1035</td>
+  <td class ="total">6154</td>
+  <td class ="total">3925</td>
+  <td class ="total">10</td>
+  <td class ="total">106</td>
+  <td class ="total">11320</td>
 
 
   </tr>
