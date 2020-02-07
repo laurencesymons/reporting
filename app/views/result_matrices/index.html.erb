@@ -86,7 +86,7 @@
     <% save_the_student_applicants_count = applicants.save_the_student.size %>
     <% applicants_count = applicants.size %>
 
-
+    <% aplicants_count = applicants.size %>
 
     <% organic_students_count = students.organic.size %>
     <% ucas_students_count = students.ucas.size %>
@@ -140,7 +140,10 @@
     <b>  <td class ="graduate"><%= save_the_student_graduates_count %></td></b>
     <b>  <td class ="graduate"><%= graduates_count %></td></b>
 
-  <b>  <td class="total"><%= organic_raw_recruitment_count %></td></b>
+    <b> <td class ="graduate"><%= graduates_count %></td></b>
+
+
+  <b>  <td class="total"><%= organic_raw_recruitment_count %>></td></b>
   <b>  <td class="total"><%= ucas_raw_recruitment_count %></td></b>
   <b>  <td class="total"><%= facebook_raw_recruitment_count %></td></b>
   <b>  <td class="total"><%= money_magpie_raw_recruitment_count %></td></b>
@@ -185,12 +188,12 @@
     <b>  <td class="graduate"><%= (graduates_count / total_months).to_i %></td></b>
 
     <% unless total_months.zero? %>
-    <b>  <td><%= (organic_raw_recruitment_count / total_months).to_i %></td></b>
-    <b>  <td><%= (ucas_raw_recruitment_count / total_months).to_i %></td></b>
-    <b>  <td><%= (facebook_raw_recruitment_count / total_months).to_i %></td></b>
-    <b>  <td><%= (money_magpie_raw_recruitment_count / total_months).to_i %></td></b>
-    <b>  <td><%= (save_the_student_raw_recruitment_count / total_months).to_i %></td></b>
-    <b>  <td><%= (raw_recruitment_count / total_months).to_i %></td></b>
+    <b>  <td class="total"><%= (organic_raw_recruitment_count / total_months).to_i %></td></b>
+    <b>  <td class="total"><%= (ucas_raw_recruitment_count / total_months).to_i %></td></b>
+    <b>  <td class="total"><%= (facebook_raw_recruitment_count / total_months).to_i %></td></b>
+    <b>  <td class="total"><%= (money_magpie_raw_recruitment_count / total_months).to_i %></td></b>
+    <b>  <td class="total"><%= (save_the_student_raw_recruitment_count / total_months).to_i %></td></b>
+    <b>  <td class="total"><%= (raw_recruitment_count / total_months).to_i %></td></b>
     <% end %>
   </tr>
 
@@ -498,6 +501,46 @@
   <td class ="total">106</td>
   <td class ="total">11320</td>
 
+
+  </tr>
+
+  <tr>
+    <td>December 2019</td>
+
+    <td class="youth">77</td>
+    <td class="youth">428</td>
+    <td class="youth">242</td>
+    <td class="youth">2</td>
+    <td class="youth">17</td>
+    <td class="youth">766</td>
+
+    <td class ="applicant">99</td>
+    <td class ="applicant">3164</td>
+    <td class ="applicant">41</td>
+    <td class ="applicant">0</td>
+    <td class ="applicant">5</td>
+    <td class ="applicant">3309</td>
+
+    <td class ="student">168</td>
+    <td class ="student">171</td>
+    <td class ="student">327</td>
+    <td class ="student">0</td>
+    <td class ="student">19</td>
+    <td class ="student">‭685‬</td>
+
+    <td class ="graduate">20</td>
+    <td class ="graduate">12</td>
+    <td class ="graduate">11</td>
+    <td class ="graduate">0</td>
+    <td class ="graduate">5</td>
+    <td class ="graduate">750</td>
+
+  <td class ="total">1035</td>
+  <td class ="total">6154</td>
+  <td class ="total">3925</td>
+  <td class ="total">10</td>
+  <td class ="total">106</td>
+  <td class ="total">11320</td>
 
   </tr>
 
