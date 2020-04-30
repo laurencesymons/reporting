@@ -24,7 +24,7 @@
       <td>Facebook</td>
       <td>Money Magpie</td>
       <td>Save The Student</td>
-      <td class="border">Total</td>
+      <td class="borders">Total</td>
 
 
       <td>Organic</td>
@@ -32,7 +32,7 @@
       <td>Facebook</td>
       <td>Money Magpie</td>
       <td>Save The Student</td>
-      <td class="border">Total</td>
+      <td class="borders">Total</td>
 
 
       <td>Organic</td>
@@ -40,7 +40,7 @@
       <td>Facebook</td>
       <td>Money Magpie</td>
       <td>Save The Student</td>
-      <td class="border">Total</td>
+      <td class="borders">Total</td>
 
 
       <td>Organic</td>
@@ -48,14 +48,14 @@
       <td>Facebook</td>
       <td>Money Magpie</td>
       <td>Save The Student</td>
-      <td class="border">Total</td>
+      <td class="borders">Total</td>
 
     <td>Organic</td>
     <td>UCAS</td>
     <td>Facebook</td>
     <td>Money Magpie</td>
     <td>Save The Student</td>
-    <td class="border">Total</td>
+    <td class="borders">Total</td>
   </tr>
 
   <% total_month_keys = @monthly_raw_recruitment.keys %>
@@ -110,7 +110,7 @@
 
   <tr>
 
-    <td>January 2019</td>
+    <td class="stick">January 2019</td>
 
     <td class="organic">166</td>
     <td class="ucas">327</td>
@@ -152,7 +152,7 @@
 
   <tr>
 
-    <td>Febuary 2019</td>
+    <td class="stick">Febuary 2019</td>
 
     <td class="organic">113</td>
     <td class="ucas">104</td>
@@ -192,7 +192,7 @@
 
   </tr>
 <tr>
-  <td>March 2019</td>
+  <td class="stick">March 2019</td>
 
   <td class="organic">264</td>
   <td  class="ucas">2014</td>
@@ -233,7 +233,7 @@
 </tr>
 
 <tr>
-  <td>April 2019</td>
+  <td class="stick">April 2019</td>
 
   <td  class="organic">279</td>
   <td  class="ucas">2133</td>
@@ -274,7 +274,7 @@
 </tr>
 
 <tr>
-  <td>May 2019</td>
+  <td class="stick">May 2019</td>
 
   <td  class="organic">154</td>
   <td class="ucas">321</td>
@@ -324,7 +324,7 @@
 
   <% total_month_keys.each do |import| %>
     <tr>
-      <td><%= "#{import.month}-01".to_date.strftime('%B %Y') %></td>
+      <td class="stick"><%= "#{import.month}-01".to_date.strftime('%B %Y') %></td>
 
         <% youth_row = @monthly_youths[import] %>
         <td class="organic"><%= youth_row.select {|object| object.organic?}.size %></td>
@@ -373,7 +373,7 @@
 
 
   <tr>
-    <td>September 2019</td>
+    <td class="stick">September 2019</td>
 
     <td class="organic">290</td>
     <td class="ucas">449</td>
@@ -414,7 +414,7 @@
   </tr>
 
   <tr>
-    <td>October 2019</td>
+    <td class="stick">October 2019</td>
 
     <td class="organic">195</td>
     <td class="ucas">247</td>
@@ -457,7 +457,7 @@
 
 
   <tr>
-    <td>November 2019</td>
+    <td class="stick">November 2019</td>
 
     <td class="organic">287</td>
     <td class="ucas">1395</td>
@@ -498,7 +498,7 @@
   </tr>
 
   <tr>
-    <td>December 2019</td>
+    <td class="stick">December 2019</td>
 
     <td class="organic">77</td>
     <td class="ucas">428</td>
@@ -538,7 +538,7 @@
   </tr>
 
   <tr>
-    <td>January 2020</td>
+    <td class="stick">January 2020</td>
 
     <td class="organic">11</td>
     <td class="ucas">203</td>
@@ -579,7 +579,7 @@
 
 
   <tr>
-    <td>Febuary 2020</td>
+    <td class="stick">Febuary 2020</td>
 
     <td class="organic">176</td>
     <td class="ucas">31</td>
@@ -619,7 +619,7 @@
   </tr>
 
   <tr>
-    <td>March 2020</td>
+    <td class="stick">March 2020</td>
 
     <td class="organic">269</td>
     <td class="ucas">1814</td>
