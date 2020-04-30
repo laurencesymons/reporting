@@ -8,8 +8,13 @@ table {
   width: 100%;
 }
 
-td, th {
+th {
   border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+
+td{
   text-align: left;
   padding: 8px;
 }
@@ -19,6 +24,6 @@ th {
 }
 
 
-.youth{
+.organic{
   background-color: green;
 }
