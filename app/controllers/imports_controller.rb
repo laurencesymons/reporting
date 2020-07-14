@@ -37,7 +37,7 @@ class ImportsController < ApplicationController
             m_age_bands_report: row[9].value.to_s,
             datetime: row[10].value.to_s
         }
-
+        puts(raw_recruitments)
         @import.raw_recruitments.create(raw_recruitment)
 
       rescue StandardError => e
