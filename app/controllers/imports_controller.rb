@@ -24,7 +24,7 @@ class ImportsController < ApplicationController
       begin
 
         raw_recruitment = {
-            dispcode: row[0].value,
+            dispcode: row[0].value.to_s,
             u_email: row[1].value,
             pstatu_date: row[2].value.to_s,
             penter: Time.parse(row[3].value.to_s).to_s,
@@ -90,8 +90,8 @@ class ImportsController < ApplicationController
     quarter = [year, quarters[month]].join("")
 
     raw_r01 = RawRecruitment.select(:day, :dispcode).where(["import_id = ?", import_id]).group(:day).count(:dispcode)
-    raw_r02 = RawRecruitment.select(:day, :dispcode).where("import_id IS ? AND dispcode IN ('Suspended (22)', 'Inactive (13)','Screened out (37)','Not yet started (20)','Currently responding (21)')", import_id).group(:day).count(:dispcode)
-    raw_recruited = RawRecruitment.select(:day, :dispcode).where("import_id IS ? AND dispcode IN ('Completed (31)','Custom completed 1 (33)','Completed after break (32)')", import_id).group(:day).count(:dispcode)
+    raw_r02 = RawRecruitment.select(:day, :pstatu_date).where(["import_id IS ? AND pstatu_date IS NOT null ", import_id]).group(:day).count(:pstatu_date)
+    raw_recruited = RawRecruitment.select(:day, :datetime).where("import_id IS ? AND datetime IS NOT null", import_id).group(:day).count(:datetime)
 
     format_raw(year,month,raw_r01, raw_r02, raw_recruited).each do |timestamp, data|
       r01_Completers, r02_Starters, recruited = data
