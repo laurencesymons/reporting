@@ -24,7 +24,7 @@ class ImportsController < ApplicationController
       begin
 
         raw_recruitment = {
-            dispcode: row[0].value.to_s,
+            dispcode: row[0].value,
             u_email: row[1].value,
             pstatu_date: row[2].value.to_s,
             penter: Time.parse(row[3].value.to_s).to_s,
@@ -90,7 +90,7 @@ class ImportsController < ApplicationController
     quarter = [year, quarters[month]].join("")
 
     raw_r01 = RawRecruitment.select(:day, :dispcode).where(["import_id = ?", import_id]).group(:day).count(:dispcode)
-    raw_r02 = RawRecruitment.select(:day, :pstatu_date).where(["import_id = ? AND pstatu_date IS NOT null ", import_id]).group(:day).count(:pstatu_date)
+    raw_r02 = RawRecruitment.select(:day, :pstatu_date).where(["import_id = ? AND pstatu_date IS NOT null", import_id]).group(:day).count(:pstatu_date)
     raw_recruited = RawRecruitment.select(:day, :datetime).where(["import_id = ? AND datetime IS NOT null", import_id]).group(:day).count(:datetime)
 
     format_raw(year,month,raw_r01, raw_r02, raw_recruited).each do |timestamp, data|

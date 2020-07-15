@@ -5,6 +5,9 @@ class RawRecruitment < ApplicationRecord
   scope :money_magpie, -> {where(reg_code: ['Money Magpie'])}
   scope :save_the_student, -> {where(reg_code: ['Save The Student'])}
   scope :facebook, -> {where(reg_code: ['Facebook promoted posts'])}
+  scope :uniboost, -> {where(reg_code: ['University Boosters'])}
+  scope :afility, -> {where(reg_code: ['Afility'])}
+  scope :contentcollab, -> {where(reg_code: ['Conent collaborations'])}
   scope :monthly, -> {includes(:import).order('imports.month').group_by(&:import)}
   scope :students, -> {where(m_panel_membership: 'Student')}
   scope :graduates, -> {where(m_panel_membership: 'Graduate')}
@@ -29,5 +32,17 @@ class RawRecruitment < ApplicationRecord
 
   def facebook?
     ['Facebook promoted posts'].include?(reg_code)
+  end
+
+  def uniboost?
+    ['University Boosters'].include?(reg_code)
+  end
+
+  def afility?
+    ['Afility'].include?(reg_code)
+  end
+
+  def contentcollab?
+    ['Conent collaborations'].include?(reg_code)
   end
 end
