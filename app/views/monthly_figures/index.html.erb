@@ -260,11 +260,11 @@
             <td><%= r1_completer %></td>
             <td><%= r2_starters%></td>
             <td><%= recruited %></td>
-            <td><%= (((r2_starters/ r1_completer).round(2)) *100) %>%
+            <td><%= (r2_starters/ r1_completer) *100 %>%
             </td>
-            <td><%= (((recruited/ r2_starters).round(2)) * 100) %>%
+            <td><%= (recruited/ r2_starters) * 100 %>%
             </td>
-            <td><%= (((recruited/ r1_completer).round(2)) * 100) %>%
+            <td><%= (recruited/ r1_completer) * 100 %>%
 
             </td>
           </tr>
