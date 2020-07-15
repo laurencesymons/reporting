@@ -243,7 +243,25 @@
         </tr>
 
 
+        <% @monthly_figures.count.keys.each do |key| %>
+          <tr>
+            <td><%= key %></td>
+            <% r1_completer = monthly_r1_completer[key] %>
+            <% r2_starters = monthly_r2_starters[key] %>
+            <% recruited = monthly_recruited[key] %>
 
+            <td><%= r1_completer %></td>
+            <td><%= r2_starters%></td>
+            <td><%= recruited %></td>
+            <td><%= r1_completer.zero? ? 0 : (r2_starters/ r1_completer).round(2) *100 %>%
+            </td>
+            <td><%= r2_starters.zero? ? 0 : (recruited/ r2_starters).round(2) *100 %>%
+            </td>
+            <td><%= r1_completer.zero? ? 0 : (recruited/ r1_completer).round(2) *100 %>%
+
+            </td>
+          </tr>
+        <% end %>
 
 
   </tbody>
@@ -342,25 +360,7 @@
     <td>55.62% <meter value="55" min="0" max="100"></meter></td>
     <td>48.54% <meter value="48" min="0" max="100"></meter></td>
   </tr>
-  <% @monthly_figures.count.keys.each do |key| %>
-    <tr>
-      <td><%= key %></td>
-      <% r1_completer = monthly_r1_completer[key] %>
-      <% r2_starters = monthly_r2_starters[key] %>
-      <% recruited = monthly_recruited[key] %>
 
-      <td><%= r1_completer %></td>
-      <td><%= r2_starters + recruited %></td>
-      <td><%= recruited %></td>
-      <td><%= r1_completer.zero? ? 0 : (r2_starters/ r1_completer).round(2) *100 %>%
-      </td>
-      <td><%= r2_starters.zero? ? 0 : (recruited/ r2_starters).round(2) *100 %>%
-      </td>
-      <td><%= r1_completer.zero? ? 0 : (recruited/ r1_completer).round(2) *100 %>%
-
-      </td>
-    </tr>
-  <% end %>
 
 
 </tbody>
