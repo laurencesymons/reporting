@@ -19,6 +19,10 @@
   <% monthly_r1_completer =  @monthly_figures.sum(:R01_Completers) %>
   <% monthly_r2_starters = @monthly_figures.sum(:R02_Starters) %>
   <% monthly_recruited = @monthly_figures.sum(:Recruited) %>
+  <% monthly_signup_to_start = @monthly_figures.sum(:R01_Completes_To_R02_Starters_Ratio) %>
+  <% monthly_start_to_complete = @monthly_figures.sum(:R02_Starters_To_Recruited_Ratio) %>
+  <% monthly_complete_to_signup = @monthly_figures.sum(:R01_Completers_To_Recruited_Ratio) %>
+
 
   <tbody>
 
@@ -249,15 +253,18 @@
             <% r1_completer = monthly_r1_completer[key] %>
             <% r2_starters = monthly_r2_starters[key] %>
             <% recruited = monthly_recruited[key] %>
+            <% start_ratio = monthly_signup_to_start[key] %>
+            <% begin_ratio = monthly_start_to_complete[key] %>
+            <% complete_ratio = monthly_complete_to_signup[key] %>
 
             <td><%= r1_completer %></td>
             <td><%= r2_starters%></td>
             <td><%= recruited %></td>
-            <td><%=(r2_starters/ r1_completer).round(2) * 100 %>%
+            <td><%= start_ratio %>%
             </td>
-            <td><%=(recruited/ r2_starters).round(2) * 100 %>%
+            <td><%= begin_ratio %>%
             </td>
-            <td><%=(recruited/ r1_completer).round(2) * 100 %>%
+            <td><%= complete_ratio %>%
 
             </td>
           </tr>
