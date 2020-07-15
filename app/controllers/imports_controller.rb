@@ -24,8 +24,8 @@ class ImportsController < ApplicationController
       begin
 
         raw_recruitment = {
-            dispcode: row[0].value,
-            u_email: row[1].value,
+            dispcode: row[0].value.to_s,
+            u_email: row[1].value.to_s,
             pstatu_date: row[2].value.to_s,
             penter: Time.parse(row[3].value.to_s).to_s,
             day: Time.parse(row[3].value.to_s).day,
