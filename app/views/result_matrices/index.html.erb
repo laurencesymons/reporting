@@ -1168,7 +1168,7 @@
             <td class="uniboost"><%= youth_row.select {|object| object.uniboost?}.size %></td>
             <td class="afility"><%= youth_row.select {|object| object.afility?}.size %></td>
             <td class="contentcollab"><%= youth_row.select {|object| object.contentcollab?}.size %></td>
-            <td class="border"><%= youth_row.size %></td>
+            <td class="border"><%= youth_row.select {|object| object.organic?}.size + youth_row.select {|object| object.ucas?}.size   %></td>
 
 
             <% applicants_row = @monthly_applicants[import] %>
