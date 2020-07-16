@@ -22,6 +22,9 @@
   <% monthly_signup_to_start = @monthly_figures.sum(:R01_Completes_To_R02_Starters_Ratio) %>
   <% monthly_start_to_complete = @monthly_figures.sum(:R02_Starters_To_Recruited_Ratio) %>
   <% monthly_complete_to_signup = @monthly_figures.sum(:R01_Completers_To_Recruited_Ratio) %>
+  <% quarter_r1_completer =  @quarter_figures.sum(:R01_Completers) %>
+  <% quarter_r2_starters = @quarter_figures.sum(:R02_Starters) %>
+  <% quarter_recruited = @quarter_figures.sum(:Recruited) %>
 
 
   <tbody>
@@ -368,7 +371,26 @@
     <td>48.54% <meter value="48" min="0" max="100"></meter></td>
   </tr>
 
+  <% @quarter_figures.count.keys.each do |key| %>
+    <tr>
+      <td><%= key %></td>
+      <% r1_completer_quarter = quarter_r1_completer[key] %>
+      <% r2_starters_quarter = quarter_r2_starters[key] %>
+      <% recruited_quarter = quarter_recruited[key] %>
 
+
+      <td><%= r1_completer_quarter %></td>
+      <td><%= r2_starters_quarter%></td>
+      <td><%= recruited_quarter %></td>
+      <td>84.54% <meter value="84" min="0" max="100"></meter>
+      </td>
+      <td>55.17% <meter value="55" min="0" max="100"></meter>
+      </td>
+      <td>46.66% <meter value="46" min="0" max="100"></meter>
+
+      </td>
+    </tr>
+  <% end %>
 
 </tbody>
 </table>
