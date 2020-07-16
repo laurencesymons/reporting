@@ -7,7 +7,7 @@ class RawRecruitment < ApplicationRecord
   scope :facebook, -> {where(reg_code: ['Facebook promoted posts'])}
   scope :uniboost, -> {where(reg_code: ['University Boosters'])}
   scope :afility, -> {where(reg_code: ['Afility'])}
-  scope :contentcollab, -> {where(reg_code: ['Conent collaborations'])}
+  scope :contentcollab, -> {where(reg_code: ['Content collaborations'])}
   scope :monthly, -> {includes(:import).order('imports.month').group_by(&:import)}
   scope :students, -> {where(m_panel_membership: 'Student')}
   scope :graduates, -> {where(m_panel_membership: 'Graduate')}
