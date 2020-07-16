@@ -1168,7 +1168,7 @@
             <td class="uniboost"><%= youth_row.select {|object| object.uniboost?}.size %></td>
             <td class="afility"><%= youth_row.select {|object| object.afility?}.size %></td>
             <td class="contentcollab"><%= youth_row.select {|object| object.contentcollab?}.size %></td>
-            <td class="border"><%= youth_row.select {|object| object.organic?}.size + youth_row.select {|object| object.ucas?}.size   %></td>
+            <td class="border"><%= youth_row.select {|object| object.organic?}.size + youth_row.select {|object| object.ucas?}.size + youth_row.select {|object| object.facebook?}.size + youth_row.select {|object| object.money_magpie?}.size + youth_row.select {|object| object.save_the_student?}.size + youth_row.select {|object| object.afility?}.size + youth_row.select {|object| object.uniboost?}.size + youth_row.select {|object| object.contentcollab?}.size %></td>
 
 
             <% applicants_row = @monthly_applicants[import] %>
@@ -1180,7 +1180,7 @@
             <td class="uniboost"><%= applicants_row.select {|object| object.uniboost?}.size %></td>
             <td class="afility"><%= applicants_row.select {|object| object.afility?}.size %></td>
             <td class="contentcollab"><%= applicants_row.select {|object| object.contentcollab?}.size %></td>
-            <td class="border"><%= applicants_row.size %></td>
+            <td class="border"><%= applicants_row.select {|object| object.organic?}.size + applicants_row.select {|object| object.ucas?}.size + applicants_row.select {|object| object.facebook?}.size + applicants_row.select {|object| object.money_magpie?}.size + applicants_row.select {|object| object.save_the_student?}.size + applicants_row.select {|object| object.afility?}.size + applicants_row.select {|object| object.uniboost?}.size + applicants_row.select {|object| object.contentcollab?}.size  %></td>
 
 
             <% students_row = @monthly_students[import] %>
@@ -1192,7 +1192,7 @@
             <td  class="uniboost"><%= students_row.select {|object| object.uniboost?}.size %></td>
             <td  class="afility"><%= students_row.select {|object| object.afility?}.size %></td>
             <td  class="contentcollab"><%= students_row.select {|object| object.contentcollab?}.size %></td>
-            <td class="border"><%= students_row.size %></td>
+            <td class="border"><%= students_row.select {|object| object.organic?}.size + students_row.select {|object| object.ucas?}.size + students_row.select {|object| object.facebook?}.size + students_row.select {|object| object.money_magpie?}.size + students_row.select {|object| object.save_the_student?}.size + students_row.select {|object| object.afility?}.size + students_row.select {|object| object.uniboost?}.size + students_row.select {|object| object.contentcollab?}.size %></td>
 
 
             <% graduates_row = @monthly_graduates[import] %>
@@ -1204,7 +1204,7 @@
             <td  class="uniboost"><%= graduates_row.select {|object| object.uniboost?}.size %></td>
             <td  class="afility"><%= graduates_row.select {|object| object.afility?}.size %></td>
             <td  class="contentcollab"><%= graduates_row.select {|object| object.contentcollab?}.size %></td>
-            <td class="border"><%= graduates_row.size %></td>
+            <td class="border"><%= graduates_row.select {|object| object.organic?}.size + graduates_row.select {|object| object.ucas?}.size + graduates_row.select {|object| object.facebook?}.size + graduates_row.select {|object| object.money_magpie?}.size + graduates_row.select {|object| object.save_the_student?}.size + graduates_row.select {|object| object.afility?}.size + graduates_row.select {|object| object.uniboost?}.size + graduates_row.select {|object| object.contentcollab?}.size %></td>
 
           <% total_monthly_data = @monthly_raw_recruitment[import] %>
           <td class="organic"><%= total_monthly_data.select {|object| object.organic?}.size %></td>
@@ -1215,7 +1215,7 @@
           <td  class="uniboost"><%= total_monthly_data.select {|object| object.uniboost?}.size %></td>
           <td  class="afility"><%= total_monthly_data.select {|object| object.afility?}.size %></td>
           <td  class="contentcollab"><%= total_monthly_data.select {|object| object.contentcollab?}.size %></td>
-          <td class="border"><%= total_monthly_data.size %></td>
+          <td class="border"><%= total_monthly_data.select {|object| object.organic?}.size + total_monthly_data.select {|object| object.ucas?}.size + total_monthly_data.select {|object| object.facebook?}.size + total_monthly_data.select {|object| object.money_magpie?}.size + total_monthly_data.select {|object| object.save_the_student?}.size + total_monthly_data.select {|object| object.afility?}.size + total_monthly_data.select {|object| object.uniboost?}.size + total_monthly_data.select {|object| object.contentcollab?}.size%></td>
         </tr>
       <% end %>
 
